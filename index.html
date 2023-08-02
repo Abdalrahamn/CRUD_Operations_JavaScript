@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icon.png" />
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Products </title>
+</head>
+<body>
+    <div class="w-75 py-3 mx-auto">
+        <div class="head mx-auto text-uppercase text-center">
+            <h2 class="py-2">crud </h2>
+            <p class="py-2">Products Mangamant System</p>
+        </div>
+
+        <div class="inputs">
+            <input type="text" oninput="validateProductName()" class="form-control my-2" id="name" placeholder="Product Name">
+
+            <div class="price">
+                <input type="number" onkeyup="getTotal()" class="my-1 " id="price" placeholder="price">
+                <input type="number" onkeyup="getTotal()" class="my-1 " id="taxes" placeholder="taxes">
+                <input type="number" onkeyup="getTotal()" class="my-1 " id="ads" placeholder="ads">
+                <input type="number" onkeyup="getTotal()" class="my-1 " id="discount" placeholder="discount">
+                <small class="bg-danger px-1 py-2 rounded " id="total">0</small>
+            </div>
+            <input type="number" class="my-2 form-control" id="count" placeholder="count">
+            <input type="text" class="my-2 form-control" id="category" placeholder="category">
+            <textarea class="form-control my-2" id="description" placeholder="description"></textarea>
+
+        </div>
+        <button class="btn btn-outline-info mt-3" id="add"> Add Product</button>
+        <button onclick="clearForm()" class="btn btn-outline-info mt-3" id="clear"> Clear Form </button>
+
+    </div>
+
+    <div class="w-75 mx-auto py-5 outputs">
+        <div class="btnSearch">
+            <button onclick="getSearchMood(this.id);" class="btn btn-outline-info " id="searchName">Search By Name</button>
+            <button onclick="getSearchMood(this.id);" class="btn btn-outline-info " id="searchCategory">Search By Category</button>  
+        </div>
+        <input onkeyup="searchData(this.value)" type="text" id="search"  class="w-95 mt-2 mb-4 mx-auto form-control" placeholder="search by Name">
+
+        <div id="DeleteAll">
+            <button class="btn  btn-outline-danger  pm-3 d-none" id="btnDeleteAll"></button>
+        </div>
+        <table class="table text-center text-white">
+            <thead class="text-uppercase">
+                <th>Id </th>
+                <th>Name </th>
+                <th>Price </th>
+                <th>Taxes </th>
+                <th>Ads </th>
+                <th>Total </th>
+                <th>Discount </th>
+                <th>category </th>
+                <th>Desc </th>
+                <th>Delete </th>
+                <th>Update </th>
+            </thead>
+            <tbody id="tableBody">
+                
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="js/index.js"></script>
+</body>
+</html>
