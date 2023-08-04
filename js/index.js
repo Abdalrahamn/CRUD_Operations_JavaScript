@@ -107,7 +107,7 @@ function displayProducts() {
   for (let i = 0; i < productsContainer.length; i++) {
     cartoona += `
         <tr>
-            <td>${i} </td>
+            <td>${i+1} </td>
             <td>${productsContainer[i].name} </td>
             <td>${productsContainer[i].price} </td>
             <td>${productsContainer[i].taxes} </td>
